@@ -1,0 +1,41 @@
+\documentclass[$for(classoption)$$classoption$$sep$,$endfor$]{style/trbunofficial_bdit}
+$if(fontfamily)$
+\usepackage{$fontfamily$}
+$endif$
+
+\usepackage{graphicx}
+\setkeys{Gin}{keepaspectratio}
+
+% \usepackage[colorlinks=true,linkcolor=blue,citecolor=blue]{hyperref}
+% For TRB version hide links
+\usepackage[hidelinks]{hyperref}
+\def\UrlBreaks{\do\/\do-}
+\usepackage[normalem]{ulem}
+\usepackage{longtable_bugfix}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+$for(include-before)$
+$include-before$
+$endfor$
+
+\begin{document}
+$if(include-before)$
+\maketitle
+$endif$
+
+$body$
+
+$for(include-after)$
+$include-after$
+$endfor$
+
+% https://tex.stackexchange.com/questions/41134/how-to-prevent-automatic-justification-of-references
+\bibliographystyle{style/trb}
+\begingroup
+\raggedright
+\bibliography{source/references}
+\endgroup
+
+\end{document}
