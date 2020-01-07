@@ -8,6 +8,19 @@ https://github.com/tompollard/phd_thesis_markdown) repo, and uses the [TRB latex
 template](https://github.com/khaeru/trb-latex) from Paul Kishimoto.  The TRR
 CSL is from [the styles repo](https://github.com/citation-style-language/styles/blob/master/transportation-research-record.csl)
 
+### Companion Code
+
+This paper references two repositories containing code used to process trip OD data into vehicle volumes:
+
+1. [**bdit_triprouter:**](https://github.com/CityofToronto/bdit_triprouter) 
+uses the PostgreSQL [pgRouting](http://pgrouting.org/) extension to route trip
+Origins and Destinations on a street network using historic and modelled traffic
+data. It was also used to generate a feasible set of Destination-Origin links 
+with costs as an input to the next algorithm.
+2. [**bdit_triplinker:**](https://github.com/CityofToronto/bdit_triplinker) uses
+Python to link vehicle-for-hire trips together into driver work shifts.
+
+
 ## Installing Dependencies
 
 On the EC2, LaTeX and Pandoc should already be installed and accessible to all
